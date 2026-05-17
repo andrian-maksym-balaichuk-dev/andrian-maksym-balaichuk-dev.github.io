@@ -1,0 +1,49 @@
+Copyright (c) 2025 Andrian-Maksym Balaichuk. All rights reserved.
+
+
+Why This Exists
+---------------
+
+I spend most of my time writing C++ — routing engines, embedded firmware, public SDKs.
+Web development is not my day job, and this site was never meant to be a portfolio piece
+for frontend work.
+
+I built it because I wanted a resume that felt like me: dark, technical, a little
+over-engineered for what it is. The floating C++ snippets in the background, the
+typewriter that cycles through what I'm actually shipping, the glass cards — none of
+that was strictly necessary. I did it anyway, because I care about the craft even when
+it's outside my lane.
+
+The structure is open for anyone to read. If you are a C++ engineer who wants a resume
+site and finds this useful as a reference, that is exactly the kind of person I built it
+for. Take the ideas. Don't copy the content — the words, the CV, the photo, and the
+professional history belong to me.
+
+
+Terms
+-----
+
+Permission is granted to read, study, and draw inspiration from the source code
+structure and implementation techniques in this repository.
+
+The following are not permitted without explicit written consent:
+
+  - Reproducing or distributing the resume content (text, biography, work history,
+    certifications, or any personal information belonging to Andrian-Maksym Balaichuk).
+
+  - Using the profile photo or PDF CV in any form.
+
+  - Deploying this site, or any derivative that retains the personal content, as if it
+    represents a different individual.
+
+  - Claiming authorship of the design or implementation in a professional context.
+
+The source code structure — components, hooks, build configuration, and deployment
+pipeline — may be adapted freely for personal, non-commercial use with attribution.
+
+
+Attribution
+-----------
+
+If you build something from this, a line in your own README pointing back here is
+appreciated. Not required. Just the kind of thing I would do.
