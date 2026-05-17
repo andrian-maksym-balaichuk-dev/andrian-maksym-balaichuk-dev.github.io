@@ -16,7 +16,7 @@ export function Hero() {
     'navigation engines that route in milliseconds.',
     'modern C++20 / 23 in real production code.',
     'backend APIs built for the long haul.',
-    'concurrent systems that don\'t lie under load.',
+    "concurrent systems that don't lie under load.",
     'algorithms tuned for the workloads they actually see.',
   ], []);
   const typed = useTypewriter(phrases, { typeMs: 38, deleteMs: 20, holdMs: 1600 });
@@ -27,6 +27,7 @@ export function Hero() {
         <div className="grid md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Left */}
           <div className="md:col-span-8 lg:col-span-7 flex flex-col gap-7 reveal">
+
             <div className="flex flex-wrap gap-2">
               <span className="chip chip-mono">
                 <span className="chip-dot pulse-dot" style={{ background: 'oklch(0.82 0.14 150)', boxShadow: '0 0 10px oklch(0.82 0.14 150)' }} />
@@ -36,21 +37,50 @@ export function Hero() {
               <span className="chip chip-mono"><Icon name="Cpu" size={11} /> {PROFILE.role}</span>
             </div>
 
-            <h1 className="font-semibold tracking-[-0.025em] leading-[0.96]">
-              <span className="block text-[14px] font-mono tracking-[0.18em] uppercase text-[color:var(--ink-muted)] mb-3">
-                <span className="text-white">{'>'}_</span> hello, i'm
-              </span>
-              <span className="block text-[34px] xs:text-[40px] sm:text-[56px] md:text-[64px] lg:text-[72px] xl:text-[78px]">
-                {firstName}
-              </span>
-              <span className="block text-[34px] xs:text-[40px] sm:text-[56px] md:text-[64px] lg:text-[72px] xl:text-[78px]" style={{
-                background: 'linear-gradient(90deg, oklch(0.86 0.10 220), oklch(0.80 0.13 280), oklch(0.84 0.12 340))',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                filter: 'drop-shadow(0 0 24px oklch(0.78 0.13 280 / 0.25))',
-              }}>
-                {lastName || ' '}
-              </span>
-            </h1>
+            {/* Name row — photo appears to the right on mobile only */}
+            <div className="flex items-start justify-between gap-4">
+              <h1 className="font-semibold tracking-[-0.025em] leading-[0.96] flex-1 min-w-0">
+                <span className="block text-[14px] font-mono tracking-[0.18em] uppercase text-[color:var(--ink-muted)] mb-3">
+                  <span className="text-white">{'>'}_</span> hello, i'm
+                </span>
+                <span className="block text-[34px] xs:text-[40px] sm:text-[56px] md:text-[64px] lg:text-[72px] xl:text-[78px]">
+                  {firstName}
+                </span>
+                <span className="block text-[34px] xs:text-[40px] sm:text-[56px] md:text-[64px] lg:text-[72px] xl:text-[78px]" style={{
+                  background: 'linear-gradient(90deg, oklch(0.86 0.10 220), oklch(0.80 0.13 280), oklch(0.84 0.12 340))',
+                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                  filter: 'drop-shadow(0 0 24px oklch(0.78 0.13 280 / 0.25))',
+                }}>
+                  {lastName || ' '}
+                </span>
+              </h1>
+
+              {/* Mobile-only circular photo, hidden on md+ where sidebar card shows */}
+              <div className="relative shrink-0 md:hidden mt-7">
+                <div className="absolute -inset-4 rounded-full pointer-events-none" style={{
+                  background: 'radial-gradient(60% 60% at 50% 50%, oklch(0.72 0.18 280 / 0.5), transparent 70%)',
+                  filter: 'blur(20px)',
+                }} />
+                <div
+                  className="relative w-[88px] h-[88px] xs:w-[108px] xs:h-[108px] rounded-full overflow-hidden border border-white/15"
+                  style={{ boxShadow: '0 0 0 3px oklch(0.72 0.18 280 / 0.22), 0 8px 32px rgba(0,0,0,0.55)' }}
+                >
+                  <img
+                    src="/photo.png"
+                    alt={PROFILE.name}
+                    loading="eager"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                  <span className="chip chip-mono text-[9px]" style={{ background: 'rgba(6,7,11,0.82)', backdropFilter: 'blur(8px)', padding: '2px 7px' }}>
+                    <span className="chip-dot pulse-dot" style={{ background: 'oklch(0.82 0.14 150)', boxShadow: '0 0 8px oklch(0.82 0.14 150)', width: '5px', height: '5px' }} />
+                    online
+                  </span>
+                </div>
+              </div>
+            </div>
 
             <div className="font-mono text-[14px] sm:text-[15px] md:text-[17px] text-[color:var(--ink-dim)] flex items-start gap-3 min-h-[4.6em] sm:min-h-[3.2em]">
               <span className="text-[color:var(--ink-muted)] shrink-0 pt-[2px]">$</span>
